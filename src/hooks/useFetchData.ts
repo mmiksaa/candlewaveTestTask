@@ -2,6 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { CandlestickData } from 'lightweight-charts';
 
+type bncData = [number, string, string, string, string];
+
 const useFetchData = (interval: string) => {
   const [data, setData] = useState<CandlestickData[]>([]);
   const [btcPrice, setBtcPrice] = useState<number | null>(null);
@@ -16,8 +18,7 @@ const useFetchData = (interval: string) => {
         },
       });
 
-      //any потому-что приходит огромный массив данных, который нужно типизировать в отдельном файле.
-      const candles = response.data.map((candle: any) => ({
+      const candles = response.data.map((candle: bncData) => ({
         time: candle[0] / 1000,
         open: parseFloat(candle[1]),
         high: parseFloat(candle[2]),

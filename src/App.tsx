@@ -20,7 +20,7 @@ const App: React.FC = () => {
     }, 1000);
 
     return () => {
-      clearInterval(intervalId as unknown as number);
+      clearInterval(intervalId);
     };
   }, [interval]);
 
