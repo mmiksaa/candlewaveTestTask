@@ -10,12 +10,10 @@ const Chart: React.FC<ChartProps> = ({ chartRef, data }) => {
   useEffect(() => {
     if (!chartRef.current) return;
 
-    // Настройки графика
     const chartOptions = {
       layout: {
         textColor: 'black',
         background: {
-          // Указываем тип SolidColor
           type: 'solid',
           color: 'white',
         } as SolidColor,
