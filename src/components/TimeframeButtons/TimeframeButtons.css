@@ -1,0 +1,13 @@
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.btns button {
+  margin-right: 5px;
+}
+
+.price {
+  display: block;
+  margin-left: 20px;
+}
